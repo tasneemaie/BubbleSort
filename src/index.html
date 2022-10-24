@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BubbleSort</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>
+    <script>
+    function bubbleSort(arr){
+   const length = arr.length;
+   let isSwapped = false;
+
+    for(let i = 0; i < length; i++){
+        for(let j = 0; j < length; j++){
+            if(arr[j] > arr[j+1]){
+                //swap
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+              isSwapped = true;
+            }
+        }
+      // IF no two elements were swapped by inner loop, then break
+      //i.e. array is already sorted
+      if(!isSwapped) break;
+    }
+    return arr;
+}
+
+let a = [99,44,6,2,1,5,63,87,283,4,0];
+document.write(bubbleSort(a));
+    </script>
+  </app-root>
+</body>
+</html>
